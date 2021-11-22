@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-colombiagasweb-dev-154027-authRole",
+            "UnauthRoleArn": "arn:aws:iam::515167779910:role/amplify-colombiagasweb-dev-154027-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::515167779910:role/amplify-colombiagasweb-dev-154027-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-colombiagasweb-dev-154027-deployment",
+            "UnauthRoleName": "amplify-colombiagasweb-dev-154027-unauthRole",
+            "StackName": "amplify-colombiagasweb-dev-154027",
+            "StackId": "arn:aws:cloudformation:us-east-1:515167779910:stack/amplify-colombiagasweb-dev-154027/6ea2dd80-4bd4-11ec-a1da-12bc7613d5b9",
+            "AmplifyAppId": "d3srubzqm9hds0"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3srubzqm9hds0",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}

@@ -1,18 +1,34 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Simulador = () => {
 
 	const [params, setParams] = useState({
-		numCars: 0,
-		operationDays: 0,
-		carKm: 0,
-		autonomia: 0
+		numCars: 20,
+		operationDays: 25,
+		carKm: 80,
+		autonomia: 40
 	})
 
 	const [result, setResult] = useState({
 		gasolina: 0,
 		gnv: 0
 	})
+
+	useEffect(() => {
+		const { numCars, operationDays, carKm, autonomia } = params
+		const operations = numCars * operationDays
+		const kmTotal = operations * carKm
+		const galones = kmTotal / autonomia
+		const fuelPrice = 8671
+
+		const gasm3 = 1700
+
+		setResult({
+			gasolina: galones * fuelPrice,
+			gnv: 0
+		})
+		console.log()
+	}, [params])
 
 	const onChange = e => {
 		setParams(Object.assign({}, params, { [e.target.name]: e.target.value }))
@@ -62,7 +78,7 @@ const Simulador = () => {
 				<ul>
 					<li>
 						<p>Costo mensual usando gasolina.</p>
-						<p>COP 536214</p>
+						<p>COP {Math.floor(result.gasolina)}</p>
 					</li>
 					<li>
 						<p>Costo mensual usando GNV</p>
@@ -70,8 +86,10 @@ const Simulador = () => {
 					</li>
 				</ul>
 				<div className="porcentaje">
-					<span>44%</span>
-					<p>Ahorro de combustible en costos</p>
+					<div>
+						<span>44%</span>
+						<p>Ahorro de combustible en costos</p>
+					</div>
 				</div>
 			</div>
 		</article>
@@ -130,6 +148,7 @@ const Simulador = () => {
 			}
 
 			.porcentaje {
+				display: grid;
 				box-sizing: border-box;
 				padding: 1rem;
 				width: 10rem;
